@@ -1,0 +1,58 @@
+# Environnements virtuels
+venv/
+env/
+.env/
+
+# Fichiers Python compilés
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Fichiers de configuration avec informations sensibles
+config/credentials.yml
+.env
+
+# Fichiers de données
+data/raw/
+data/processed/
+data/archive/
+*.csv
+*.xlsx
+*.parquet
+
+# Logs
+logs/
+*.log
+
+# Fichiers Jupyter Notebook
+.ipynb_checkpoints
+
+# Fichiers de base de données locaux
+*.db
+*.sqlite3
+
+# Fichiers Docker
+.dockerignore
+
+# Fichiers spécifiques à l'IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers Airflow
+airflow.db
+airflow.cfg
+webserver_config.py
+airflow-webserver.pid
