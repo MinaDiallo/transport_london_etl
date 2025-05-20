@@ -1,0 +1,42 @@
+ Idées d’analyse possibles avec l’API :
+Analyse de la ponctualité par ligne (tendances sur plusieurs jours)
+
+Analyse des perturbations récurrentes
+
+Visualisation des horaires d’affluence
+
+Recommandation d'itinéraires optimaux
+
+#Croisement avec données météo (impact météo sur les retards)
+
+DAG : tfl_data_pipeline
+
+        +------------------+
+        | extract_tfl_data |
+        +------------------+
+                 ↓
+        +------------------+
+        | transform_pyspark |
+        +------------------+
+                 ↓
+        +------------------+
+        | load_to_bigquery |
+        +------------------+
+
+check_api_availability → vérifie que l’API répond avant d’extraire
+
+data_quality_check → vérifie qu’il y a bien des données après la transformation
+
+archive_raw_data → sauvegarde une copie brute dans un bucket
+
+clean_temp_files → supprime les fichiers temporaires après le load
+
+Tu pourrais ajouter :
+
+Un DAG Airflow fetch_ridership_data.
+
+Un traitement Spark pour fusionner les données arrivées + passagers estimés.
+
+Une charge dans BigQuery ou Snowflake.
+
+Un dashboard Power BI ou Looker Studio (ex : top 10 stations aux heures de pointe).
